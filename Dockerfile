@@ -1,5 +1,7 @@
-FROM adoptopenjdk/openjdk17:alpine-jre
+FROM openjdk:17-alpine
 
-COPY target/gateway.jar app.jar
+ARG JAR_FILE=target/*.jar
 
-CMD ["java", "-jar", "app.jar"]
+COPY ${JAR_FILE} gateway.jar
+
+ENTRYPOINT ["java", "-jar", "gateway.jar"]
