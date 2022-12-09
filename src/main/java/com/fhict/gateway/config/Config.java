@@ -15,10 +15,10 @@ public class Config {
                 .route(r -> r.path("/api/v1/tweets/**")
                         .uri("http://localhost:8081/"))
 
-                .route(r -> r.path("/profile/**")
+                .route(r -> r.path("/api/v1/profile/**")
                         .uri("http://localhost:8082/"))
 
-                .route(r -> r.path("/relation/**")
+                .route(r -> r.path("/api/v1/relation/**")
                         .uri("http://localhost:8083/"))
                 .build();
     }
