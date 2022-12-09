@@ -1,5 +1,11 @@
 version: '3'
 services:
+  rabbitmq:
+    image: rabbitmq:management
+    restart: "no"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
   gateway:
     image: renskloosterman/gateway:latest
     ports:
