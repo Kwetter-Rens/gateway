@@ -17,6 +17,7 @@ services:
       - 8080:8080
     depends_on:
         - rabbitmq
+    network_mode: "host"
   tweet-service:
     image: renskloosterman/tweet-service:latest
     ports:
