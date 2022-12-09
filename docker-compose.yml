@@ -19,6 +19,6 @@ services:
     ports:
       - 8082:8080
   relation-service:
-    image: renskloosterman/relation-service:latest
+    image: renskloosterman/social-graph-service:latest
     ports:
       - 8083:8080
