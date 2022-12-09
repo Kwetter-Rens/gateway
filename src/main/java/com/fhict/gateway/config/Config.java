@@ -12,7 +12,7 @@ public class Config {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/api/v1/tweet/**")
+                .route(r -> r.path("/api/v1/tweets/**")
                         .uri("http://localhost:8081/"))
 
                 .route(r -> r.path("/profile/**")
