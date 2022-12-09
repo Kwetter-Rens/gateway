@@ -10,15 +10,23 @@ services:
     image: renskloosterman/gateway:latest
     ports:
       - 8080:8080
+    depends_on:
+        - rabbitmq
   tweet-service:
     image: renskloosterman/tweet-service:latest
     ports:
       - 8081:8080
+    depends_on:
+        - rabbitmq
   profile-service:
     image: renskloosterman/profile-service:latest
     ports:
       - 8082:8080
+    depends_on:
+        - rabbitmq
   relation-service:
     image: renskloosterman/relation-service:latest
     ports:
       - 8083:8080
+    depends_on:
+        - rabbitmq
