@@ -13,7 +13,7 @@ public class Config {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/api/v1/tweets/**")
-                        .uri("http://0.0.0.0:8081/"))
+                        .uri("http://localhost:8081/"))
 
                 .route(r -> r.path("/api/v1/profile/**")
                         .uri("http://localhost:8082/"))
