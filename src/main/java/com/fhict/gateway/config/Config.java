@@ -12,13 +12,13 @@ public class Config {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/api/v1/tweet/**")
+                .route("Tweet-service", r -> r.path("/api/v1/tweet/**")
                         .uri("https://kwetter-tweet.agreeablesand-b781a089.westeurope.azurecontainerapps.io/"))
 
-                .route(r -> r.path("/api/v1/profile/**")
+                .route("Profile-service", r -> r.path("/api/v1/profile/**")
                         .uri("http://localhost:8082/"))
 
-                .route(r -> r.path("/api/v1/relation/**")
+                .route("Relation-service", r -> r.path("/api/v1/relation/**")
                         .uri("http://localhost:8083/"))
                 .build();
     }
