@@ -16,10 +16,10 @@ public class Config {
                         .uri("https://kwetter-tweet.agreeablesand-b781a089.westeurope.azurecontainerapps.io/"))
 
                 .route("Profile-service", r -> r.path("/api/v1/profile/**")
-                        .uri("http://localhost:8082/"))
+                        .uri("https://profile-service.agreeablesand-b781a089.westeurope.azurecontainerapps.io"))
 
                 .route("Relation-service", r -> r.path("/api/v1/relation/**")
-                        .uri("http://localhost:8083/"))
+                        .uri("https://relation-service.agreeablesand-b781a089.westeurope.azurecontainerapps.io/"))
                 .build();
     }
 }

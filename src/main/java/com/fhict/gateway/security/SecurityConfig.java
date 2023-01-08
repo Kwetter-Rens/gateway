@@ -3,7 +3,6 @@ package com.fhict.gateway.security;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
@@ -25,13 +24,9 @@ public class SecurityConfig {
     SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) throws Exception {
         http
                 .authorizeExchange()
-                .pathMatchers(HttpMethod.POST, "/api/v1/**")
-                .authenticated()
-                .pathMatchers(HttpMethod.PUT, "/api/v1/**")
-                .authenticated()
-                .pathMatchers(HttpMethod.DELETE, "/api/v1/**")
-                .authenticated()
-                .pathMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
+                .pathMatchers("/api/v1/**")
+                .permitAll()
+                .pathMatchers("/actuator/**").permitAll()
                 .and()
                 .oauth2ResourceServer()
                 .jwt();
